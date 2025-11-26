@@ -17,12 +17,9 @@ export const router = createBrowserRouter(
         {
             path: "/",
             element: <Layout />,
-            children: [
-                {
-                    index: true,
-                    element: <Board />
-                }
-            ]
+
         }
     ]
 )
+
+// https://prod.liveshare.vsengsaas.visualstudio.com/join?63042DD39097D1B5CDF7965CC6714AC76A31
