@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom"
 import SignUp from "../pages/SignUp"
 import SignIn from "../pages/SignIn/"
 import Layout from "../pages/Layout"
-import Board from "../pages/Board"
+import Items from "../pages/Items"
 
 export const router = createBrowserRouter(
     [
@@ -17,9 +17,12 @@ export const router = createBrowserRouter(
         {
             path: "/",
             element: <Layout />,
-
+            children: [
+                {
+                    index: true,
+                    element: <Items />
+                }
+            ]
         }
     ]
 )
-
-// https://prod.liveshare.vsengsaas.visualstudio.com/join?63042DD39097D1B5CDF7965CC6714AC76A31

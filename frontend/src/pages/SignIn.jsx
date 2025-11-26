@@ -1,3 +1,4 @@
+import Button from "../components/Button"
 import "./SignIn.css"
 
 const SignIn = () => {
@@ -40,13 +41,13 @@ const SignIn = () => {
                 <div className="form-error">Введите пароль</div>
             </div>
 
-            <button type="submit" className="btn-submit">Войти</button>
+            <Button type="submit" className="btn-submit">Войти</Button>
         </form>
 
         <div className="auth-divider">или</div>
 
         <div className="auth-link">
-            Нет аккаунта? <a href="/register">Зарегистрироваться</a>
+            Нет аккаунта? <a href="/SignUp">Зарегистрироваться</a>
         </div>
     </div>
     )
