@@ -2,7 +2,7 @@ import axios from "axios"
 import { use } from "react"
 import { useUserStore } from "../store/useUserStore"
 const apiInstance = axios.create({
-    baseURL: "https://kitek.ktkv.dev/feedback/api",
+    baseURL: "https://sturdy-capybara-wgppwx9qpvpfgg9p-3001.app.github.dev/api",
     headers: {
         "Content-Type": "application/json"
     }
@@ -34,33 +34,9 @@ const loginUser = async (user) => {
     return res
 }
 
-const sendMessage = async (message) => {
-    const res = await apiInstance.post("/messages", message)
-    return res
-}
-
-
-const deleteMessage = async (id) => {
-    const res = await apiInstance.delete (`/messages/${id}`)
-    return res
-}
-
-const reportMessage = async (id) => {
-    const res = await apiInstance.post (`/messages/${id}/report`)
-    return res
-}
-
-const likeMessage = async (id) => {
-    const res = await apiInstance.post (`/messages/${id}/like`)
-    return res
-}
 
 export const api = {
     getMessages,
     registerUser,
-    loginUser,
-    sendMessage,
-    deleteMessage,
-    reportMessage,
-    likeMessage
+    loginUser
 }

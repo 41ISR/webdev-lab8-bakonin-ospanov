@@ -36,7 +36,7 @@ const SignUp = () => {
 
     }
     return (
-        <div classNameName="container">
+        <div className="container">
 
             <div className="auth-container">
                 <div className="auth-header">
@@ -50,55 +50,60 @@ const SignUp = () => {
                 </div>
 
                 {error.length > 0 && <div classNameName="auth-error">{error}</div>}
-                <form id="register-form">
+                <form id="register-form" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <Input
+                            id="username"
+                            name="username"
                             label="Имя пользователя"
                             hint="Минимум 3 символа"
                             error="Имя пользователя должно быть не менее 3 символов"
                             type="text"
                             className="form-input"
-                            name="username"
                             placeholder="Введите имя пользователя"
                             minlength="3"
                             required
                             autocomplete="username"
                         />
                         <Input
+                        
+                            id="email"
+                            name="email"
                             label="Email"
                             error="Введите корректный email"
                             type="email"
                             className="form-input"
-                            name="email"
                             placeholder="example@email.com"
                             autocomplete="email"
                         />
                         <Input
+                            id="password"
+                            name="password"
                             label="Пароль"
                             hint="Минимум 6 символов"
                             error="Пароль должен быть не менее 6 символов"
                             type="password"
                             className="form-input"
-                            name="password"
                             placeholder="Введите пароль"
                             minlength="6"
                             required
                             autocomplete="new-password"
                         />
                         <Input
+                            id="password1"
+                            name="password1"
                             label="Подтверждение пароля"
                             hint="Минимум 6 символов"
                             error="Пароли не совпадают"
                             type="password"
                             className="form-input"
-                            name="confirmPassword"
                             placeholder="Повторите пароль"
                             required
                             autocomplete="new-password"
                         />
 
-                        <button type="submit" className="btn-submit">Зарегистрироваться</button>
-                        </div>
+                        <Button className="btn-submit">Зарегистрироваться</Button>
+                    </div>
                 </form>
 
                 <div className="auth-divider">или</div>

@@ -8,6 +8,20 @@
       "email": "test@example.com",
       "password": "$2b$10$EgVDQPfrj9sgt3bDDXjX9egBZ5bL0JS.c/Vmgas3mS1YoAi8V9K8.",
       "createdAt": "2025-10-20T06:53:56.986Z"
+    },
+    {
+      "id": 1764307616784,
+      "username": "asd",
+      "email": "asd@a",
+      "password": "$2b$10$3Hbg52ZihTat4JoKkADoKuBR5hUJ.x8g6ADE.7qRuOJ8eCK4DHDpu",
+      "createdAt": "2025-11-28T05:26:56.784Z"
+    },
+    {
+      "id": 1764308660346,
+      "username": "asdf",
+      "email": "asdf@a",
+      "password": "$2b$10$MtN2TP45OCQ5GzcBqoK3SeTNZtGWpOgFnwOEF4n0U5YwkuTHHZGf6",
+      "createdAt": "2025-11-28T05:44:20.346Z"
     }
   ]
 }
