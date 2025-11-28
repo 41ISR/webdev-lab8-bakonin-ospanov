@@ -61,9 +61,9 @@ const SignUp = () => {
                             type="text"
                             className="form-input"
                             placeholder="Введите имя пользователя"
-                            minlength="3"
+                            minLength="3"
                             required
-                            autocomplete="username"
+                            autoComplete="username"
                         />
                         <Input
                         
@@ -74,7 +74,7 @@ const SignUp = () => {
                             type="email"
                             className="form-input"
                             placeholder="example@email.com"
-                            autocomplete="email"
+                            autoComplete="email"
                         />
                         <Input
                             id="password"
@@ -85,9 +85,9 @@ const SignUp = () => {
                             type="password"
                             className="form-input"
                             placeholder="Введите пароль"
-                            minlength="6"
+                            minLength="6"
                             required
-                            autocomplete="new-password"
+                            autoComplete="new-password"
                         />
                         <Input
                             id="password1"
@@ -99,7 +99,7 @@ const SignUp = () => {
                             className="form-input"
                             placeholder="Повторите пароль"
                             required
-                            autocomplete="new-password"
+                            autoComplete="new-password"
                         />
 
                         <Button className="btn-submit">Зарегистрироваться</Button>

@@ -4,7 +4,7 @@ import SignIn from "../pages/SignIn/"
 import Layout from "../pages/Layout"
 import Items from "../pages/Items"
 import Logout from "../pages/Logout"
-import createItem from "../pages/createItem"
+import CreateItem from "../pages/createItem"
 
 export const router = createBrowserRouter(
     [
@@ -22,7 +22,7 @@ export const router = createBrowserRouter(
         },
         {
             path: "/createItem",
-            element: <create=item />,
+            element: <CreateItem />,
         },
         {
             path: "/",

@@ -1,5 +1,19 @@
 {
-  "items": [],
+  "items": [
+    {
+      "id": 1764316689522,
+      "title": "asd",
+      "description": "asdasd",
+      "price": null,
+      "imageUrl": null,
+      "userId": 1764307616784,
+      "username": "asd",
+      "status": "active",
+      "highestBid": null,
+      "bidCount": 0,
+      "createdAt": "2025-11-28T07:58:09.522Z"
+    }
+  ],
   "bids": [],
   "users": [
     {

@@ -52,7 +52,7 @@ const SignIn = () => {
                         name="username"
                         placeholder="Введите имя пользователя"
                         required
-                        autocomplete="username"
+                        autoComplete="username"
                     />
                     <Input
                         label="Пароль"
@@ -63,7 +63,7 @@ const SignIn = () => {
                         name="password"
                         placeholder="Введите пароль"
                         required
-                        autocomplete="current-password"
+                        autoComplete="current-password"
                     />
                     </div>
 

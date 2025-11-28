@@ -1,5 +1,4 @@
 import axios from "axios"
-import { use } from "react"
 import { useUserStore } from "../store/useUserStore"
 const apiInstance = axios.create({
     baseURL: "https://sturdy-capybara-wgppwx9qpvpfgg9p-3001.app.github.dev/api",
@@ -34,9 +33,14 @@ const loginUser = async (user) => {
     return res
 }
 
+const createItem = async (item) => {
+    const res = await apiInstance.post("/items", item)
+    return res
+}
 
 export const api = {
     getMessages,
     registerUser,
-    loginUser
+    loginUser,
+    createItem
 }

@@ -1,94 +1,123 @@
+import { api } from "../api/api"
 import Input from "../components/Input"
+import NavBar from "../components/NavBar"
+import "./createItem.css"
+import "./Layout.css"
 
-const Layout = () => {
-    const { session } = useUserStore()
+
+const CreateItem = () => {
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const item = {
+            title: e.target.title.value,
+            description: e.target.description.value,
+            price: e.target.description.value,
+            imageUrl: e.target.imageUrl.value
+        }
+
+        try {
+            const data = await api.createItem(item)
+            navigate("/")
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+
     return (
         <>
-<div class="page-header">
-        <h1>Создать новый товар</h1>
-    </div>
-
-    <div class="form-container">
-        <form id="create-item-form">
-            <div class="form-group">
-                <label class="form-label">
-                    Название товара <span class="required">*</span>
-                </label>
-                <Input 
-                    type="text" 
-                    class="form-Input" 
-                    name="title"
-                    placeholder="Например: iPhone 14 Pro 256GB"
-                    maxlength="100"
-                    required
-                />
-                <div class="char-counter">
-                    <span class="current">0</span> / 100
-                </div>
+            <NavBar />
+            <div className="page-header">
+                <h1>Создать новый товар</h1>
             </div>
 
-            <div class="form-group">
-                <label class="form-label">
-                    Описание <span class="required">*</span>
-                </label>
-                <textarea 
-                    class="form-textarea" 
-                    name="description"
-                    placeholder="Подробно опишите товар, его состояние, характеристики..."
-                    maxlength="1000"
-                    required
-                ></textarea>
-                <div class="char-counter">
-                    <span class="current">0</span> / 1000
-                </div>
-                <div class="form-hint">
-                    Чем подробнее описание, тем больше шансов продать товар
-                </div>
-            </div>
+            <div className="form-container">
+                <form onSubmit={handleSubmit} id="create-item-form">
+                    <div className="form-group">
+                        <label className="form-label">
+                            Название товара <span className="required">*</span>
+                        </label>
+                        <Input
+                            id="title"
+                            type="text"
+                            className="form-Input"
+                            name="title"
+                            placeholder="Например: iPhone 14 Pro 256GB"
+                            maxLength="100"
+                            required
+                        />
+                        <div className="char-counter">
+                            <span className="current">0</span> / 100
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                <label class="form-label">
-                    Начальная цена <span class="required">*</span>
-                </label>
-                <div class="Input-group">
-                    <Input 
-                        type="number" 
-                        class="form-Input with-prefix" 
-                        name="price"
-                        placeholder="5000"
-                        min="1"
-                        step="100"
-                        required
-                    />
-                    <span class="Input-prefix">₽</span>
-                </div>
-                <div class="form-hint">
-                    Укажите минимальную цену, с которой начнутся торги
-                </div>
-            </div>
+                    <div className="form-group">
+                        <label className="form-label">
+                            Описание <span className="required">*</span>
+                        </label>
+                        <textarea
+                            className="form-textarea"
+                            id="description"
+                            name="description"
+                            placeholder="Подробно опишите товар, его состояние, характеристики..."
+                            maxLength="1000"
+                            required
+                        ></textarea>
+                        <div className="char-counter">
+                            <span className="current">0</span> / 1000
+                        </div>
+                        <div className="form-hint">
+                            Чем подробнее описание, тем больше шансов продать товар
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                <label class="form-label">
-                    URL изображения
-                </label>
-                <Input 
-                    type="url" 
-                    class="form-Input" 
-                    name="imageUrl"
-                    placeholder="https://example.com/image.jpg"
-                />
-                <div class="form-hint">
-                    Вставьте ссылку на изображение товара (опционально)
-                </div>
-                <div class="image-preview" id="image-preview">
-                </div>
-            </div>
+                    <div className="form-group">
+                        <label className="form-label">
+                            Начальная цена <span className="required">*</span>
+                        </label>
+                        <div className="Input-group">
+                            <Input
+                                type="number"
+                                className="form-Input with-prefix"
+                                id="price"
+                                name="price"
+                                placeholder="5000"
+                                min="1"
+                                required
+                            />
+                            <span className="Input-prefix">₽</span>
+                        </div>
+                        <div className="form-hint">
+                            Укажите минимальную цену, с которой начнутся торги
+                        </div>
+                    </div>
 
-            <div class="form-actions">
-                <a href="/" class="btn-cancel">Отмена</a>
-                <button type="submit" class="btn-submit">Создать товар</button>
-            </div>
-        </form>
-    </div></>
+                    <div className="form-group">
+                        <label className="form-label">
+                            URL изображения
+                        </label>
+                        <Input
+                            type="url"
+                            className="form-Input"
+                            id="imageUrl"
+                            name="imageUrl"
+                            placeholder="https://example.com/image.jpg"
+                        />
+                        <div className="form-hint">
+                            Вставьте ссылку на изображение товара (опционально)
+                        </div>
+                        <div className="image-preview" id="image-preview">
+                        </div>
+                    </div>
+
+                    <div className="form-actions">
+                        <a href="/" className="btn-cancel">Отмена</a>
+                        <button type="submit" className="btn-submit">Создать товар</button>
+                    </div>
+                </form>
+            </div></>
     )
 }
+export default CreateItem
