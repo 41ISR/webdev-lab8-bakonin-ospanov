@@ -1,11 +1,15 @@
+import { Navigate, useNavigate } from "react-router-dom"
 import { api } from "../api/api"
 import Input from "../components/Input"
 import NavBar from "../components/NavBar"
 import "./createItem.css"
 import "./Layout.css"
+import { useState } from "react"
 
 
 const CreateItem = () => {
+    const [error, setError] = useState("")
+    const Navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -13,15 +17,16 @@ const CreateItem = () => {
         const item = {
             title: e.target.title.value,
             description: e.target.description.value,
-            price: e.target.description.value,
+            price: e.target.price.value,
             imageUrl: e.target.imageUrl.value
         }
 
         try {
             const data = await api.createItem(item)
-            navigate("/")
+            Navigate("/")
         } catch (error) {
-            console.error(error)
+            console.log(error);
+            setError(error.response.data.error)
         }
     }
 

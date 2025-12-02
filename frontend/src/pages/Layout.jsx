@@ -1,16 +1,20 @@
 import "./Layout.css"
-import Items from "./Items"
 import NavBar from "../components/NavBar"
+import { Outlet } from "react-router-dom"
 
 const Layout = () => {
 
     return (
 
         <>
+            <NavBar />
             <main>
-                <NavBar />
-                <Items />
+
+                <div id="outlet">
+                    <Outlet />
+                </div>
             </main>
+
 
             <footer>
                 <p>&copy; 2025 Маркетплейс. Все права защищены.</p>
