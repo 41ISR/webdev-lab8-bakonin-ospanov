@@ -1,13 +1,10 @@
-import { useUserStore } from "../store/useUserStore"
-import useItemStore from "../store/useItemStore"
-import { api } from "../api/api"
 
-const ItemCard = ({ id, imageUrl, title, username, bidCount, createdAt, userId, price, status, highestBid, description, }) => {
+const ItemCard = ({imageUrl, title, username, bidCount, price, status, highestBid, description, }) => {
 
 
     return (
         <div className="item-card">
-            <div className="item-image">{imageUrl}</div>
+            <img src={imageUrl} className="item-image"/>
             <div className="item-content">
                 <span className="status-badge status-active">{status}</span>
                 <h3 className="item-title">{title}</h3>

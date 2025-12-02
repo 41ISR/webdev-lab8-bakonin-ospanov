@@ -17,8 +17,8 @@ apiInstance.interceptors.request.use((config) => {
     return config
 })
 
-const getMessages = async () => {
-    const data = await apiInstance.get("/messages")
+const getItems = async () => {
+    const data = await apiInstance.get("/items")
     return data.data
 }
 
@@ -39,7 +39,7 @@ const createItem = async (item) => {
 }
 
 export const api = {
-    getMessages,
+    getItems,
     registerUser,
     loginUser,
     createItem
